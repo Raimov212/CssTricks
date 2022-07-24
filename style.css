@@ -1,0 +1,227 @@
+/* Share & SUbscribe */
+body{
+    background: lavenderblush;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.text{
+    font-size: 60px;
+    font-weight: bolder;
+    font-family: 'pacifico',cursive;
+    text-shadow: 2px 2px 4px #000;
+    animation: color 5s infinite;
+}
+@keyframes color{
+    0%{color: orange;}
+    10%{color: purple;}
+    20%{color: red;}
+    30%{color: cadetblue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: deeppink;}
+    90%{color: dodgerblue;}
+    100%{color: greenyellow;}
+}
+
+
+
+/* Text marquee*/
+.marqueClass{
+    background: red;
+    height: 70px;
+    width: 500px;
+    font-size: 50px;
+    font-family: 'pacifico',cursive;
+}
+marquee{
+    background: yellow;
+}
+
+
+
+/* Img scale */
+.Imgdiv{
+    width: 350px;
+    height: 300px;
+    border: 3px solid red;
+    overflow: hidden;    
+}
+.ImgScale{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+.ImgScale:hover{
+    transform: scale(2) rotate(360deg);
+}
+
+
+
+/* preloader (please wait...) */
+.preloader{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    background-color: black;
+}
+.please_wait{
+    color: whitesmoke;
+    text-align: center;
+    font-family: 'pacifico',cursive;
+}
+.wrapper{
+    height: 50px;
+    width :300px;
+    border: 2px solid whitesmoke;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.boxes{
+    display: flex;
+    position: absolute;
+    animation: preloader 2s linear infinite;
+}
+.box{
+    margin-left: 10px;
+    height: 40px;
+    width: 20px;
+    background: whitesmoke;
+    border-radius: 5px;
+}
+@keyframes preloader{
+    0%{
+        left: -100px;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+
+
+
+
+/* preloader circle */
+.preloader_circle_body{
+    height: 100vh;
+    width: 100vh;
+    background: beige;
+    display: grid;
+    place-items: center;
+}
+.preloader_circle{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: 15px solid black;
+    box-sizing: border-box;
+    border-top-color: orange;
+    animation: preloader_circle 1s linear infinite;
+}
+@keyframes preloader_circle{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+/* ball drop animation */
+.ball_shadow{
+    height: 30vh;
+    display: grid;
+    place-items: center;
+    background: beige;
+    position: relative;
+}
+.ball{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: black;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: drop 1s ease-in-out infinite alternate;
+}
+.shadow{
+    margin-top: 150px;
+    width: 350px;
+    height: 30px;
+    border-radius: 50%;
+    background: black;
+    animation: shadow 1s ease-in-out infinite alternate;
+}
+@keyframes drop{
+    from{
+        bottom: 50px;
+    }
+    to{
+        bottom: 200px;
+    }
+}
+@keyframes shadow{
+    from{
+        width : 100px;
+        filter: blur(10px);
+    }
+    to{
+        width: 300px;
+        filter: blur(25px);
+    }
+}
+
+
+
+
+
+/*front back  */
+.wrapper_content{
+    width: 300px;
+    height: 300px;
+    border: 3px solid red;
+    perspective: 500px;
+    position: relative;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+.box{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    line-height: 300px;
+    font-size: 60px;
+    background: lightblue;
+    text-align: center;
+}
+.back{
+    background: red;
+    transform: rotateY(180deg);
+}
+.wrapper_content:hover .content{
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+/* glow a bulb */
